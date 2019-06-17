@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Async Concept Review</title>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <button id="btn">Ping Server!</button>
+    <script>
+      const myButton = document.getElementById('btn');
+      myButton.addEventListener('click', (event) => {
+        console.log('something was clicked!');
+        $.ajax({
+          method: 'GET',
+          url: "http://127.0.0.1:3000",
+          success: resp => console.log('response from server:', resp),
+        });
+      });
+
+    </script>
+  </body>
+</html>
